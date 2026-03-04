@@ -1,0 +1,471 @@
+/* -------------------
+   VARIÁVEIS GERAIS
+-------------------- */
+:root {
+    --cor-principal: #73bb73;   /* verde */
+    --cor-secundaria: #84b9c4;  /* azul esverdeado */
+    --cor-apoio: #ffea92;       /* amarelo claro */
+    --cor-fundo: #fffaf0;       /* fundo suave */
+    --cor-texto: #5f5f5f;       /* cinza */
+    --cor-branco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* -------------------
+       NAVBAR
+-------------------- */
+
+.bng-navbar {
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    background: #83d68d;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-left img {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+}
+
+.logo-txt {
+    color: #ffffff;
+}
+
+.logo-txt h1 {
+    font-size: 1.4rem;
+    line-height: 1.1;
+}
+
+.logo-txt span {
+    font-size: 0.8rem;
+}
+
+.container-navegacao {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.container-navegacao a {
+    padding: 6px 12px;
+    border-radius: 15px;
+    transition: 0.3s;
+    color: #ffffff;
+}
+
+.container-navegacao a:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.container-navegacao a.active {
+    background: rgba(255, 255, 255, 0.45);
+}
+
+/* BOTÕES NAV */
+.nav-cliente {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-login-main {
+    background: var(--cor-branco);
+    color: var(--cor-principal);
+    border-radius: 20px;
+    padding: 7px 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* -------------------
+         HERO
+-------------------- */
+
+.hero {
+    position: relative;
+    padding: 100px 20px;
+    height: 60vh;
+    background-image: url('../img/capa.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 0;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-texto h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.hero-sub {
+    font-size: 1.3rem;
+    color: #f0f0f0;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* BOTÕES HERO (se quiseres usar mais tarde) */
+.hero-botoes {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.btn-primario {
+    background: linear-gradient(135deg, #73bb7b, #dc796d);
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 12px 22px;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    box-shadow: 0 4px 12px rgba(115, 187, 123, 0.5);
+}
+
+.btn-secundario {
+    background: var(--cor-branco);
+    color: var(--cor-secundaria);
+    border-radius: 25px;
+    padding: 10px 18px;
+    font-weight: 600;
+    border: 2px solid rgba(132, 185, 196, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+/* -------------------
+    SECÇÃO GERAL
+-------------------- */
+
+.secao {
+    width: 100%;
+    padding: 80px 120px;
+    background-color: #c7f0cc;
+    box-sizing: border-box;
+}
+
+.secao h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--cor-texto);
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    color: #666;
+}
+
+.secao p {
+    text-align: justify;
+    font-size: 1.25rem;
+    line-height: 2;
+    max-width: 1200px;
+    margin: 0 auto 25px;
+    padding: 0 20px;
+}
+
+/* -------------------
+   COMO FUNCIONA
+-------------------- */
+
+.passos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.passo-card {
+    background: var(--cor-branco);
+    border-radius: 20px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.passo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+    background-color: #fff5cc;
+}
+
+.passo-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.passo1 {
+    background: #ffea92;
+}
+
+.passo2 {
+    background: #e3ca93;
+}
+
+.passo3 {
+    background: #84b9c4;
+}
+
+/* TECNOLOGIAS */
+/* TECNOLOGIAS — blocos mais largos e linha de baixo centrada */
+.perfil-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* força 3 por linha */
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Quando faltar 1 bloco na última linha → centrar */
+.perfil-grid > :nth-last-child(2):nth-child(4),
+.perfil-grid > :nth-last-child(1):nth-child(5) {
+    grid-column: span 1;
+    justify-self: center;   /* centra individualmente */
+}
+
+
+.perfil-card {
+    background: var(--cor-branco);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;  /* garante que a largura cresce conforme permitido */
+    max-width: 420px; /* aumenta a largura máxima do bloco */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    transition: 
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+    border: none;
+}
+
+.perfil-card:hover {
+    transform: translateY(-6px);
+    background-color: #fff5cc;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* -------------------
+   TECNOLOGIAS – 3 em cima, 2 centrados em baixo
+-------------------- */
+
+#tecnologias .perfil-grid {
+    display: flex;          /* em vez de grid */
+    flex-wrap: wrap;        /* permite 2.ª linha */
+    justify-content: center;/* centra as linhas */
+    gap: 24px;
+}
+
+#tecnologias .perfil-card {
+    flex: 0 1 360px;        /* largura dos blocos */
+    max-width: 360px;
+}
+
+
+
+/* -------------------
+      EQUIPA (FOTOS + NOME)
+-------------------- */
+
+.equipa-container {
+    display: flex;
+    justify-content: center;
+    gap: 150px;               /* espaço entre as fotos */
+    margin-top: 40px;
+    flex-wrap: wrap;         /* permite ajustar em ecrãs pequenos */
+}
+
+.equipa-item {
+    text-align: center;
+}
+
+.equipa-item img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;      /* foto redonda */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    border: 4px solid #ffffff;
+    background: #ffffff;
+}
+
+.equipa-item h3 {
+    margin-top: 15px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* -------------------
+   LOGIN (se for usado mais tarde)
+-------------------- */
+
+.login-explica {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.login-box {
+    background: var(--cor-branco);
+    padding: 18px;
+    border-radius: 18px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
+.btn-login-sec {
+    background: var(--cor-secundaria);
+    color: #ffffff;
+    border-radius: 18px;
+    padding: 7px 14px;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.btn-login-sec.pais {
+    background: var(--cor-apoio);
+    color: var(--cor-texto);
+}
+
+/* -------------------
+   FOOTER
+-------------------- */
+
+.footer-container {
+    background: #73bb7b;
+    color: #f5f5f5;
+    padding: 25px 20px;
+    margin-top: 0px;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* -------------------
+   RESPONSIVO
+-------------------- */
+
+@media (max-width: 900px) {
+    .secao {
+        padding: 60px 30px;
+    }
+
+    .hero-texto h2 {
+        font-size: 2.4rem;
+    }
+
+    .hero-sub {
+        font-size: 1.1rem;
+    }
+
+    .hero-container,
+    .passos-grid,
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .login-explica {
+        grid-template-columns: 1fr;
+    }
+
+    /* Tecnologias e Equipa: cartões em coluna no centro */
+    #tecnologias .perfil-grid,
+    #equipa .perfil-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-navegacao {
+        display: none;
+    }
+
+    .hero-texto h2 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,185 @@
+
+html, body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+input,
+select,
+button {
+  font-family: inherit;
+}
+
+
+
+:root {
+  --cor-principal: #73bb7b;
+  --cor-texto: #111111;
+  --cor-fundo-login: #f3f6f4;
+  --cor-borda-input: #d0d4e4;
+}
+
+/* Fundo */
+.login-body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Quicksand", sans-serif;
+  background: var(--cor-fundo-login);
+}
+
+/* Wrapper */
+.login-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22px;
+}
+
+/* Cartão */
+.login-card {
+  background: #ffffff;
+  padding: 32px 36px;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  width: 420px;
+  max-width: 92vw;
+}
+
+/* Título */
+.login-card h1 {
+  margin: 0 0 22px;
+  font-size: 1.6rem;
+  text-align: center;
+  color: var(--cor-texto);
+}
+
+/* Grupo */
+.login-group {
+  margin-bottom: 18px;
+}
+
+.login-group label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* ---------
+   IMPORTANTÍSSIMO:
+   Estiliza inputs e selects:
+   - com class .login-field
+   - e também se não tiverem a class
+--------- */
+
+/* input + select (com e sem .login-field) */
+.login-group input,
+.login-group select,
+.login-field {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--cor-borda-input);
+  font-size: 0.95rem;
+  outline: none;
+  background-color: #fafbff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* foco */
+.login-group input:focus,
+.login-group select:focus,
+.login-field:focus {
+  border-color: var(--cor-principal);
+  box-shadow: 0 0 0 3px rgba(115, 187, 123, 0.25);
+  background-color: #ffffff;
+}
+
+/* deixar o select com aspeto igual ao input */
+.login-group select,
+select.login-field {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 36px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #777 50%),
+    linear-gradient(135deg, #777 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* Erro */
+.login-error {
+  background: #ffe2e2;
+  color: #b30000;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+/* Botão */
+.login-btn {
+  width: 100%;
+  padding: 11px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--cor-principal);
+  color: #ffffff;
+  transition: background 0.2s ease, transform 0.08s ease, box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+  background: #5fa565;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.login-btn:active {
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .login-card {
+    width: 100%;
+    padding: 28px 22px;
+  }
+}
+
+
+/* -------------------
+   LOGOUT / SESSÃO TERMINADA
+-------------------- */
+
+.logout-message {
+  background: #ffffff;
+  padding: 28px 32px;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+}
+
+.logout-message h1 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: var(--cor-texto);
+}
+
+.logout-message p {
+  font-size: 1rem;
+  color: #555555;
+}
